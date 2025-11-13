@@ -11,6 +11,34 @@
     <meta name="theme-color" content="white" />
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      #language-toggle {
+        position: fixed;
+        top: 22px;
+        right: 22px;
+        z-index: 9999;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+      }
+      #language-toggle:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      }
+      #language-toggle img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+      }
+    </style>
 </head>
 <style>
     html,
@@ -31,6 +59,12 @@
 
 
 <body class="w3-light-grey">
+    <button id="language-toggle" title="Switch language">
+      <img id="lang-flag" src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/gb.svg" alt="English" />
+    </button>
+    <button id="pdf-export" title="Export as PDF" style="position:fixed;top:76px;right:22px;z-index:9999;background:#fff;border:1px solid #e5e7eb;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);cursor:pointer;transition:box-shadow 0.2s;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" style="width:28px;height:28px;border-radius:50%;" />
+    </button>
     <!-- Page Container -->
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
@@ -53,42 +87,42 @@
                     <div class="w3-container">
                         <p>
                             <i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
-                            AMS Manager, Team leader & Software Developer
+                            <span data-translation-key="job_title"></span>
                         </p>
                         <p>
                             <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
-                            Robassomero (TO), Italy
+                            <span data-translation-key="location"></span>
                         </p>
 
                         <p>
                             <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
-                            it.luca.martinengo@gmail.com
+                            <span data-translation-key="email"></span>
                         </p>
                         <hr>
 
                         <p class="w3-large"><b>
                                 <i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>
-                                Principali competenze professionali</b>
+                                <span data-translation-key="main_skills"></span></b>
                         </p>
 
-                        <p>Analisi tecnico/funzionale</p>
+                        <p data-translation-key="skill_analysis"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>Sviluppo software</p>
+                        <p data-translation-key="skill_dev"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>Gestione team di progetto</p>
+                        <p data-translation-key="skill_team"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>AMS Management</p>
+                        <p data-translation-key="skill_ams"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
-                            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">90%</div>
+                            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
                         </div>
 
                         <br>
@@ -96,51 +130,51 @@
                         <p class="w3-large">
                             <b>
                                 <i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>
-                                Principali competenze software
+                                <span data-translation-key="main_software"></span>
                             </b>
                         </p>
 
-                        <p>Dynamics 365 Business Central</p>
+                        <p data-translation-key="skill_bc"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>C/AL Language</p>
+                        <p data-translation-key="skill_cal"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>Redmine</p>
+                        <p data-translation-key="skill_redmine"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
-                        <p>GIT</p>
+                        <p data-translation-key="skill_git"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
                         </div>
 
-                        <p>.NET</p>
+                        <p data-translation-key="skill_dotnet"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
                         </div>
 
-                        <p>Microsoft suite (Excel/Word/Sharepoint..)</p>
+                        <p data-translation-key="skill_msuite"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
                         </div>
 
-                        <p>Google suite (Docs/Drive..)</p>
+                        <p data-translation-key="skill_gsuite"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
                         </div>
 
-                        <p>Web Apps/Android apps/PWA/Firebase</p>
+                        <p data-translation-key="skill_web"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
                         </div>
 
-                        <p>HTML/CSS/JavaScript</p>
+                        <p data-translation-key="skill_htmlcssjs"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
                         </div>
@@ -149,17 +183,17 @@
                         <p class="w3-large w3-text-theme">
                             <b>
                                 <i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>
-                                Lingue
+                                <span data-translation-key="languages"></span>
                             </b>
                         </p>
 
-                        <p>Italiano</p>
+                        <p data-translation-key="italian"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">100%</div>
                         </div>
 
 
-                        <p>Inglese</p>
+                        <p data-translation-key="english"></p>
                         <div class="w3-light-grey w3-round-xlarge w3-small">
                             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
                         </div>
@@ -170,41 +204,41 @@
                     <div class="w3-container w3-card w3-white">
                         <h2 class="w3-text-grey w3-padding-16">
                             <i class="fa fa-registered fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                            Certificazioni
+                            <span data-translation-key="certifications"></span>
                         </h2>
 
                         <div class="w3-container">
                             <h5 class="w3-opacity">
-                                <b>Microsoft -  Consulenza Funzionale</b>
+                                <b data-translation-key="cert_func"></b>
                             </h5>
 
                             <h6 class="w3-text-teal">
                                 <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                                2023 - Attuale
+                                <span data-translation-key="2023_actual"></span>
                             </h6>
 
-                            <p>Titolo: Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate</p>
-                            <p>Codice certificazione: MB800</p>
-                            <p>Numero certificazione: F2066F-B633Y2</p>
-                            <p><a href="https://learn.microsoft.com/en-gb/users/lucamartinengo-0744/transcript/71r63tlxlz60xw6">Link per verifica</a></p>                                
+                            <p data-translation-key="cert_func_title"></p>
+                            <p data-translation-key="cert_func_code"></p>
+                            <p data-translation-key="cert_func_num"></p>
+                            <p><a href="https://learn.microsoft.com/en-gb/users/lucamartinengo-0744/transcript/71r63tlxlz60xw6" data-translation-key="verify_link"></a></p>                                
 
                             <hr>
                         </div>
 
                         <div class="w3-container">
                             <h5 class="w3-opacity">
-                                <b>Microsoft - Sviluppo Software</b>
+                                <b data-translation-key="cert_dev"></b>
                             </h5>
 
                             <h6 class="w3-text-teal">
                                 <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                                2024 - Attuale
+                                <span data-translation-key="2024_actual"></span>
                             </h6>
 
-                            <p>Titolo: Microsoft Certified: Dynamics 365 Business Central Developer Associate</p>
-                            <p>Codice certificazione: MB820</p>
-                            <p>Numero certificazione: 348X29-3DD676</p>
-                            <p><a href="https://learn.microsoft.com/en-gb/users/lucamartinengo-0744/transcript/71r63tlxlz60xw6">Link per verifica</a></p>                                
+                            <p data-translation-key="cert_dev_title"></p>
+                            <p data-translation-key="cert_dev_code"></p>
+                            <p data-translation-key="cert_dev_num"></p>
+                            <p><a href="https://learn.microsoft.com/en-gb/users/lucamartinengo-0744/transcript/71r63tlxlz60xw6" data-translation-key="verify_link"></a></p>                                
 
                             <hr>
                         </div>
@@ -214,12 +248,12 @@
                     <div class="w3-container w3-card w3-white">
                         <h2 class="w3-text-grey w3-padding-16">
                             <i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                            Formazione
+                            <span data-translation-key="education"></span>
                         </h2>
 
                         <div class="w3-container">
                             <h5 class="w3-opacity">
-                                <b>ITIS Giuseppe Peano (Torino, IT)</b>
+                                <b data-translation-key="school"></b>
                             </h5>
 
                             <h6 class="w3-text-teal">
@@ -227,8 +261,8 @@
                                 2006 - 2011
                             </h6>
 
-                            <p>Diploma di scuola superiore - Perito Industriale Capotecnico</p>
-                            <p>Valutazione: 90/100</p>
+                            <p data-translation-key="school_degree"></p>
+                            <p data-translation-key="school_grade"></p>
 
                             <hr>
                         </div>
@@ -238,7 +272,7 @@
                     <div class="w3-container w3-card w3-white">
                         <h2 class="w3-text-grey w3-padding-16">
                             <i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                            Referenze
+                            <span data-translation-key="references"></span>
                         </h2>
 
                         <div class="w3-container">
@@ -246,14 +280,14 @@
                             <p>
                                 <a href="https://www.horsa.com/it/it">Horsa Group S.p.A.</a>
                                 <br>
-                                Lingotto Center, Via Nizza 262/72, 10127, Torino (Italia)
+                                <span data-translation-key="horsa_addr"></span>
                                 <br>
                             </p>
 
                             <p>
                                 <a href="https://www.sistemi.com/">Sistemi S.p.A.</a>
                                 <br>
-                                Via Magenta 31, 10093, Collegno (Italia)
+                                <span data-translation-key="sistemi_addr"></span>
                                 <br>
                             </p>
 
@@ -265,16 +299,12 @@
                     <div class="w3-container w3-card w3-white">
                         <h2 class="w3-text-grey w3-padding-16">
                             <i class="fa fa-copyright fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                            GDPR
+                            <span data-translation-key="gdpr"></span>
                         </h2>
 
                         <div class="w3-container">
 
-                            <p>
-                                Autorizzo il trattamento dei miei dati personali ai sensi del d.lgs. 196/2003 e del
-                                Regolamento UE 2016/679
-                            </p>
-
+                            <p data-translation-key="gdpr_text"> </p>
                             <hr>
                         </div>
 
@@ -291,26 +321,17 @@
                 <div class="w3-container w3-card w3-white">
                     <h2 class="w3-text-grey w3-padding-16">
                         <i class="fa fa-clipboard fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                        Job Profile
+                        <span data-translation-key="about_title"></span>
                     </h2>
 
                     <div class="w3-container">
-                        <p>
-                            AMS Manager, IT Team Leader & Developer, con esperienza pluriennale nell'analisi
-                            e sviluppo di applicazioni software e nella gestione di gruppi di lavoro.
-                            <br>
+                        <p data-translation-key="about_summary">
                         </p>
 
-                        <p>
-                            Principalmente, ho contribuito alla realizzazione di soluzioni ERP basate su Microsoft
-                            Dynamics 365 Business Central ed alla gestione della base clienti aziendale ad essi
-                            correlata.
-                            <br>
+                        <p data-translation-key="about_contribution">
                         </p>
 
-                        <p>
-                            Interessato ad opportunità lavorative che consentano una crescita del profilo professionale,
-                            contribuendo con entusiasmo e determinazione al completamento dei progetti.
+                        <p data-translation-key="about_interest">
                         </p>
 
                         <hr>
@@ -321,7 +342,7 @@
                 <div class="w3-container w3-card w3-white w3-margin-bottom">
                     <h2 class="w3-text-grey w3-padding-16">
                         <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                        Esperienza lavorativa
+                        <span data-translation-key="work_exp"></span>
                     </h2>
                     <div class="w3-container">
 
@@ -332,157 +353,57 @@
 
                         <h6 class="w3-text-teal">
                             <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                            Ottobre 2021 - <span class="w3-tag w3-teal w3-round">Data attuale</span>
+                            <span data-translation-key="ams_dates"><span data-translation-key="oct_2021"></span> - <span class="w3-tag w3-teal w3-round" data-translation-key="current_date"></span></span>
                         </h6>
 
-                        <p>
-                            Gestione del servizio AMS per la Business Unit Way del gruppo Horsa.
-                        </p>
+                        <p data-translation-key="ams_desc"></p>
 
-                        <p>
-                            Nel dettaglio:
-                            <br>
+                        <p data-translation-key="ams_detail_title"></p>
                         <ul>
-                            <li>
-                                Coordinamento e pianificazione di attività e risorse
-                            </li>
-                            <li>
-                                Gestione dei processi di assistenza ed attività evolutive per clienti utilizzatori
-                                di Dynamics NAV e Microsoft 365 Business Central
-                            </li>
-                            <li>
-                                Coordinamento giornaliero ed a medio/lungo termine del team Helpdesk
-                            </li>
-                            <li>
-                                Coordinamento passaggio da fase progettuale a fase di assistenza per tutti i clienti
-                            </li>
-                            <li>
-                                Gestione delle contestazioni clientelari (fatturazione, metodologia, qualità)
-                            </li>
-                            <li>
-                                Elaborazione analisi e prospetti BI per controllo prestazioni risorse e qualità del
-                                servizio
-                            </li>
-                            <li>
-                                Controllo rendiconti di fatturato e definizione/controllo contingency (rispetto
-                                tempistiche/stime)
-                            </li>
-                            <li>
-                                Collaborazione con direzione tecnica, direzione business unit, risorse umane e reparto
-                                commerciale
-                                per il buon funzionamento del servizio di assistenza
-                            </li>
+                            <li data-translation-key="ams_li1"></li>
+                            <li data-translation-key="ams_li2"></li>
+                            <li data-translation-key="ams_li3"></li>
+                            <li data-translation-key="ams_li4"></li>
+                            <li data-translation-key="ams_li5"></li>
+                            <li data-translation-key="ams_li6"></li>
+                            <li data-translation-key="ams_li7"></li>
+                            <li data-translation-key="ams_li8"></li>
                         </ul>
-                        </p>
                     </div>
 
                     <div class="w3-container">
 
                         <h5 class="w3-opacity">
-                            <b>Team leader & Dynamics 365 Developer / <a href="https://www.horsa.com">Horsa
-                                    S.p.A.</a></b>
+                            <b>Team leader & Dynamics 365 Developer / <a href="https://www.horsa.com">Horsa S.p.A.</a></b>
                         </h5>
 
                         <h6 class="w3-text-teal">
                             <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                            Maggio 2018 - <span class="w3-tag w3-teal w3-round">Data attuale</span>
+                            <span data-translation-key="teamlead_dates"><span data-translation-key="may_2018"></span> - <span class="w3-tag w3-teal w3-round" data-translation-key="current_date"></span></span>
                         </h6>
 
-                        <p>
-                            Team Leader per gruppi di lavoro mirati a realizzare soluzioni ERP basate sull'applicativo
-                            Microsoft Dynamics 365 Business Central e sulla sua precedente implementazione, Dynamics
-                            NAV.
-                            <br>
-                            Percorso iniziato originariamente in Ahead Informatica, società entrata a far parte del
-                            gruppo
-                            Horsa a Febbraio del 2019.
-                        </p>
-                        <p>
-                            Nel dettaglio:
-                            <br>
-                        <ul>
-                            <li>
-                                Project management IT, analisi e software development per cliente multinazionale nel
-                                settore della vendita al dettaglio di oreficeria.
-                                <br>
-                                Coperte funzionalmente le aree e-commerce, gestione del punto vendita, contabilità,
-                                controllo
-                                di gestione, planning, warehouse management, distribuzione.
-                            </li>
-                            <li>
-                                Analisi e software development per ottimizzazione flussi logistici in
-                                importanti realtà distributive, per settore retail e farmaceutico.
-                                <br>
-                                Sviluppate integrazioni con terminali di lettura barcodes, ottimizzazione
-                                di stoccaggio, prelievo e rifornimento, gestione dei corrieri di spedizione e
-                                contabilità di magazzino.
-                                <br>
-                                Anche in questo caso le realtà cliente in cui si è operato sono di medio/grandi
-                                dimensioni ed internazionali.
-                            </li>
-                            <li>
-                                Analisi e software development per interscambio dati fra
-                                diversi sistemi: warehouse management systems, stampanti fiscali, registratori di cassa,
-                                logistiche di magazzino esterne al gestionale.
-                                <br>
-                                Gestite casistiche ad alto livello di concorrenzialità, con dimensioni
-                                importanti sia dal punto di vista dell'utenza che dalla numerosità di dispositivi
-                                connessi.
-                            </li>
-                            <li>
-                                Adeguamento fatturazione elettronica, con focus su integrazione ed efficienza sia dal
-                                punto di vista delle comunicazioni fiscali, sia per ottimizzazione in contabilità.
-                            </li>
-                        </ul>
-                        </p>
-                        <p>
-                            Competenze tecniche specifiche acquisite:
-                            <br>
-                        <ul>
-                            <li>
-                                IT team leading: formazione, stima, pianificazione, gestione delle risorse, redazione
-                                documentale di analisi e rendicontazione ad alto livello di precisione
-                            </li>
+                        <p data-translation-key="teamlead_desc"></p>
 
-                            <li>
-                                Utilizzo completo di Redmine come piattaforma di help desk, gestione
-                                progetti, avanzamento lavori, consuntivazione, gestione risorse.
-                                <br>
-                                Utilizzo di metodologie Agile e Kanban.
-                            </li>
-                            <li>
-                                Sviluppo software di estensioni in AL, linguaggio di programmazione standard
-                                Microsoft per Dynamics 365.
-                            </li>
-                            <li>
-                                Utilizzo di Visual Studio Code, AL Development, powershell per deploy,
-                                installazione di server SQL ed utilizzo di SQL Server management Studio.
-                                Sia per amministrazione base dati sia per stesura di queries
-                                di manutenzione ed implementazione.
-                            </li>
-                            <li>
-                                Sviluppo di add-on specifici per le soluzioni NAV e BC, principalmente in linguaggi
-                                standard .Net (C#, vb.NET)
-                            </li>
-                            <li>
-                                Considerevole esperienza nell'interscambio dati via XML e json, via web services
-                                REST o protocolli FTP/HTTP Post
-                            </li>
-                            <li>
-                                Telnet per integrazione con terminali di lettura barcodes/QR codes, IIS per
-                                la pubblicazione di servizi web, ODBC per scambio dati con differenti soluzioni
-                                software (es. import dati da AS400)
-                            </li>
-                            <li>
-                                Integrazione con le principali piattaforme di e-commerce,
-                                gestione logistica e fatturazione (es. GSPED, Magento, Arxivar)
-                            </li>
-                            <li>
-                                Ottimizzazione prestazionale per le soluzioni Dynamics 365, mediante profiling e tuning
-                                con SQL Server Management Studio
-                            </li>
+                        <p data-translation-key="teamlead_detail_title"></p>
+                        <ul>
+                            <li data-translation-key="teamlead_li1"></li>
+                            <li data-translation-key="teamlead_li2"></li>
+                            <li data-translation-key="teamlead_li3"></li>
+                            <li data-translation-key="teamlead_li4"></li>
                         </ul>
-                        </p>
+
+                        <p data-translation-key="teamlead_skills_title"></p>
+                        <ul>
+                            <li data-translation-key="teamlead_skill1"></li>
+                            <li data-translation-key="teamlead_skill2"></li>
+                            <li data-translation-key="teamlead_skill3"></li>
+                            <li data-translation-key="teamlead_skill4"></li>
+                            <li data-translation-key="teamlead_skill5"></li>
+                            <li data-translation-key="teamlead_skill6"></li>
+                            <li data-translation-key="teamlead_skill7"></li>
+                            <li data-translation-key="teamlead_skill8"></li>
+                            <li data-translation-key="teamlead_skill9"></li>
+                        </ul>
 
                         <hr>
                     </div>
@@ -490,70 +411,32 @@
                     <div class="w3-container">
 
                         <h5 class="w3-opacity">
-                            <b>Analista programmatore / <a href="https://www.sistemi.com">Sistemi S.p.A.</a></b>
+                            <b>Software developer / <a href="https://www.sistemi.com">Sistemi S.p.A.</a></b>
                         </h5>
 
                         <h6 class="w3-text-teal">
                             <i class="fa fa-calendar fa-fw w3-margin-right"></i>
-                            Novembre 2011 - Maggio 2018
+                            <span data-translation-key="analista_dates"><span data-translation-key="nov_2011"></span> - <span data-translation-key="may_2018"></span></span>
                         </h6>
 
-                        <p>
-                            Analisi e sviluppo software per soluzioni basate su architetture proprietarie Sistemi,
-                            principalmente sul gestionale vitivinicolo Enologia e sul software Profis/Bilanci.
-                        </p>
+                        <p data-translation-key="analista_desc"></p>
 
-                        <p>
-                            Principali progetti portati a termine:
-                            <br>
+                        <p data-translation-key="analista_projects_title"></p>
                         <ul>
-                            <li>
-                                Sviluppo per modulo di gestione cantina per il settore vitivinicolo, in particolare
-                                implementazioni per la tracciabilità dei prodotti enologici,
-                                quaderno di campagna, rendicontazione delle operazioni di lavorazione delle
-                                masse viticole.
-                            </li>
-                            <li>
-                                Comunicazione telematica con MIPAAF,
-                                sviluppo di web client per interscambio XML degli adempimenti fiscali atti alla
-                                produzione vinicola ed operazioni di cantina.
-                            </li>
-                            <li>
-                                Comunicazione telematica con Agenzia delle
-                                Dogane, sviluppo del modulo Telematico Accise per la comunicazione delle
-                                movimentazione di prodotti alcolici.
-                            </li>
-                            <li>
-                                Arricchimento del modulo Bilanci di Profis, adeguamenti normativi ed
-                                implementazioni su bilancio XBRL, bilancio consolidato, comunicazioni telematiche
-                                con camera di commercio.
-                            </li>
+                            <li data-translation-key="analista_li1"></li>
+                            <li data-translation-key="analista_li2"></li>
+                            <li data-translation-key="analista_li3"></li>
+                            <li data-translation-key="analista_li4"></li>
                         </ul>
-                        </p>
-                        <p>
-                            Competenze tecniche specifiche acquisite:
-                            <br>
+
+                        <p data-translation-key="analista_skills_title"></p>
                         <ul>
-                            <li>
-                                Analisi tecnica per soluzioni software strutturate, funzionali con particolare cura
-                                della user interface
-                            </li>
-                            <li>
-                                Coordinamento di piccoli progetti di sviluppo
-                            </li>
-                            <li>
-                                Attività di packaging e distribuzione del software, interazione con clienti e partners
-                                Sistemi
-                            </li>
-                            <li>
-                                Sviluppo delle soluzioni Sistemi con linguaggio proprietario “BC”.
-                            </li>
-                            <li>
-                                Sviluppati add-on esterni con diversi linguaggi di programmazione: VB .NET,
-                                XHTML, PHP, Microsoft SQL Server, XML, JSON
-                            </li>
+                            <li data-translation-key="analista_skill1"></li>
+                            <li data-translation-key="analista_skill2"></li>
+                            <li data-translation-key="analista_skill3"></li>
+                            <li data-translation-key="analista_skill4"></li>
+                            <li data-translation-key="analista_skill5"></li>
                         </ul>
-                        </p>
                         <hr>
                     </div>
 
@@ -564,38 +447,14 @@
                 <div class="w3-container w3-card w3-white">
                     <h2 class="w3-text-grey w3-padding-16">
                         <i class="fa fa-users fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>
-                        Soft skills
+                        <span data-translation-key="soft_skills">Soft skills</span>
                     </h2>
 
                     <div class="w3-container">
-                        <p>
-                            Vista l'entità dei progetti portati a termine, ho sviluppato discrete capacità relazionali,
-                            sia per
-                            quanto concerne la gestione del gruppo di lavoro, sia per quanto riguarda il rapporto con il
-                            cliente.
-                        </p>
-                        <p>
-                            Spesso ho risolto con successo criticità in entrambi i contesti, riuscendo a mantenere il
-                            gruppo di lavoro coeso e proattivo (sia risorsa che da coordinatore), collaborando e
-                            fornendo
-                            la giusta direzione al fine del completamento dell'obiettivo nei tempi e nei modi stabiliti.
-                        </p>
-                        <p>
-                            Ho spesso svolto la funzione di relatore per l'esposizione di soluzioni tecniche ed
-                            applicative
-                            al cliente, tenuto corsi di formazione per le mie risorse, presenziato e fornito il mio
-                            contributo
-                            tecnico ad importanti tavoli organizzativi anche in contesto internazionale, in lingua
-                            inglese e
-                            su sedi estere.
-                        </p>
-                        <p>
-                            In particolare con l'esperienza nel campo retail, da anni continuo settimanalmente a
-                            collaborare con partner aziendali e clienti in diversi paesi, sia in presenza che da remoto,
-                            mantenendo sempre al massimo delle mie possibilità il clima di lavoro collaborativo e
-                            sereno, affrontando con decisione le difficoltà quando necessario
-                        </p>
-
+                        <p data-translation-key="soft_desc1"></p>
+                        <p data-translation-key="soft_desc2"></p>
+                        <p data-translation-key="soft_desc3"></p>
+                        <p data-translation-key="soft_desc4"></p>
                         <hr>
                     </div>
 
@@ -608,7 +467,7 @@
         <!-- End Page Container -->
 
         <footer class="w3-container w3-teal w3-center w3-margin-top">
-            <p>Social media</p>
+            <p data-translation-key="social"></p>
             <a href="https://www.linkedin.com/in/martinengoluca/ "><i class="fa fa-linkedin w3-hover-opacity"></i></a>
             <hr>
         </footer>
@@ -621,7 +480,467 @@
                 )
             }
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
         <script src="js/app.js"></script>
+        <script>
+// --- TRANSLATION DATA ---
+const translations = {
+  // Sidebar
+  "job_title": {
+    it: "AMS Manager, Team leader & Software Developer",
+    en: "AMS Manager, Team Leader & Software Developer"
+  },
+  "location": {
+    it: "Robassomero (TO), Italy",
+    en: "Robassomero (TO), Italy"
+  },
+  "email": {
+    it: "it.luca.martinengo@gmail.com",
+    en: "it.luca.martinengo@gmail.com"
+  },
+  "main_skills": {
+    it: "Principali competenze professionali",
+    en: "Main Professional Skills"
+  },
+  "skill_analysis": {
+    it: "Analisi tecnico/funzionale",
+    en: "Technical/Functional Analysis"
+  },
+  "skill_dev": {
+    it: "Sviluppo software",
+    en: "Software Development"
+  },
+  "skill_team": {
+    it: "Gestione team di progetto",
+    en: "Project Team Management"
+  },
+  "skill_ams": {
+    it: "AMS Management",
+    en: "AMS Management"
+  },
+  "main_software": {
+    it: "Principali competenze software",
+    en: "Main Software Skills"
+  },
+  "skill_bc": {
+    it: "Dynamics 365 Business Central",
+    en: "Dynamics 365 Business Central"
+  },
+  "skill_cal": {
+    it: "C/AL Language",
+    en: "C/AL Language"
+  },
+  "skill_redmine": {
+    it: "Redmine",
+    en: "Redmine"
+  },
+  "skill_git": {
+    it: "GIT",
+    en: "GIT"
+  },
+  "skill_dotnet": {
+    it: ".NET",
+    en: ".NET"
+  },
+  "skill_msuite": {
+    it: "Microsoft suite (Excel/Word/Sharepoint..)", 
+    en: "Microsoft suite (Excel/Word/SharePoint..)"
+  },
+  "skill_gsuite": {
+    it: "Google suite (Docs/Drive..)",
+    en: "Google suite (Docs/Drive..)"
+  },
+  "skill_web": {
+    it: "Web Apps/Android apps/PWA/Firebase",
+    en: "Web Apps/Android Apps/PWA/Firebase"
+  },
+  "skill_htmlcssjs": {
+    it: "HTML/CSS/JavaScript",
+    en: "HTML/CSS/JavaScript"
+  },
+  "languages": {
+    it: "Lingue",
+    en: "Languages"
+  },
+  "italian": {
+    it: "Italiano",
+    en: "Italian"
+  },
+  "english": {
+    it: "Inglese",
+    en: "English"
+  },
+  // Certifications
+  "certifications": {
+    it: "Certificazioni",
+    en: "Certifications"
+  },
+  "cert_func": {
+    it: "Microsoft -  Consulenza Funzionale",
+    en: "Microsoft - Functional Consulting"
+  },
+  "cert_func_title": {
+    it: "Titolo: Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate",
+    en: "Title: Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate"
+  },
+  "cert_func_code": {
+    it: "Codice certificazione: MB800",
+    en: "Certification code: MB800"
+  },
+  "cert_func_num": {
+    it: "Numero certificazione: F2066F-B633Y2",
+    en: "Certification number: F2066F-B633Y2"
+  },
+  "cert_dev": {
+    it: "Microsoft - Sviluppo Software",
+    en: "Microsoft - Software Development"
+  },
+  "cert_dev_title": {
+    it: "Titolo: Microsoft Certified: Dynamics 365 Business Central Developer Associate",
+    en: "Title: Microsoft Certified: Dynamics 365 Business Central Developer Associate"
+  },
+  "cert_dev_code": {
+    it: "Codice certificazione: MB820",
+    en: "Certification code: MB820"
+  },
+  "cert_dev_num": {
+    it: "Numero certificazione: 348X29-3DD676",
+    en: "Certification number: 348X29-3DD676"
+  },
+  "verify_link": {
+    it: "Link per verifica",
+    en: "Verification link"
+  },
+  // Education
+  "education": {
+    it: "Formazione",
+    en: "Education"
+  },
+  "school": {
+    it: "ITIS Giuseppe Peano (Torino, IT)",
+    en: "ITIS Giuseppe Peano (Turin, IT)"
+  },
+  "school_degree": {
+    it: "Diploma di scuola superiore - Perito Industriale Capotecnico",
+    en: "High School Diploma - Industrial Expert Technician"
+  },
+  "school_grade": {
+    it: "Valutazione: 90/100",
+    en: "Grade: 90/100"
+  },
+  // References
+  "references": {
+    it: "Referenze",
+    en: "References"
+  },
+  "horsa_addr": {
+    it: "Lingotto Center, Via Nizza 262/72, 10127, Torino (Italia)",
+    en: "Lingotto Center, Via Nizza 262/72, 10127, Turin (Italy)"
+  },
+  "sistemi_addr": {
+    it: "Via Magenta 31, 10093, Collegno (Italia)",
+    en: "Via Magenta 31, 10093, Collegno (Italy)"
+  },
+  // GDPR
+  "gdpr": {
+    it: "GDPR",
+    en: "GDPR"
+  },
+  "gdpr_text": {
+    it: "Autorizzo il trattamento dei miei dati personali ai sensi del d.lgs. 196/2003 e del Regolamento UE 2016/679",
+    en: "I authorize the processing of my personal data pursuant to Legislative Decree 196/2003 and EU Regulation 2016/679"
+  },
+  // About
+  "about_title": {
+    it: "Job Profile",
+    en: "Job Profile"
+  },
+  "about_summary": {
+    it: `Professionista IT con esperienza decennale in analisi tecnica, sviluppo software, team leading e management, in particolare su progetti e prodotti legati Microsoft Dynamics 365 Business Central.<br>
+Esperto nello sviluppo in AL e C#, integrazioni via web services e gestione di team e processi di supporto tecnico (Redmine, GIT).<br> 
+Orientato al risultato, con comprovata capacità di migliorare le prestazioni operative, assicurare continuità di servizio e mantenere relazioni efficaci con clienti internazionali.<br>
+Aperto a valutare nuove opportunità che valorizzino competenze tecniche e capacità di coordinamento.`,    
+    en: `IT professional with over ten years experience in technical analysis, software development team leading and management for ERP solutions, specialized in Microsoft Dynamics 365 Business Central. <br>
+Skilled in AL and C# development, integrations via REST/XML, and leading support teams using Redmine and Git. <br> Results-driven, focused on performance improvements, service continuity, and effective collaboration with international clients. <br>
+Open to new opportunities that value technical expertise and coordination skills.`
+  },
+  "about_contribution": {
+    it: "Principalmente, ho contribuito alla realizzazione di soluzioni ERP basate su Microsoft Dynamics 365 Business Central ed alla gestione della base clienti aziendale ad essi correlata.",
+    en: "Mainly, I contributed to the development of ERP solutions based on Microsoft Dynamics 365 Business Central and to the management of the customer base."
+  },
+  "about_interest": {
+    it: "Interessato ad opportunità lavorative che consentano una crescita del profilo professionale, contribuendo con entusiasmo e determinazione al completamento dei progetti.",
+    en: "Interested in job opportunities that allow for professional growth, contributing with enthusiasm and determination to the completion of projects."
+  },
+  // Job Profile (legacy, if still present)
+  "job_profile": {
+    it: "Job Profile",
+    en: "Job Profile"
+  },
+  // Work Experience (expanded translations)
+  "work_exp": {
+    it: "Esperienza lavorativa",
+    en: "Job Experience"
+  },
+  "ams_desc": {
+    it: "Gestione del servizio AMS (post-vendita) per la Business Unit Way del gruppo Horsa.",
+    en: "Management of the AMS service for the Way Business Unit of the Horsa Group."
+  },
+  "ams_detail_title": {
+    it: "Nel dettaglio:",
+    en: "In detail:"
+  },
+  "ams_li1": {
+    it: "Coordinamento e pianificazione di attività e risorse",
+    en: "Coordination and planning of activities and resources"
+  },
+  "ams_li2": {
+    it: "Gestione dei processi di assistenza ed attività evolutive per clienti utilizzatori di Dynamics NAV e Microsoft 365 Business Central",
+    en: "Management of support processes and development activities for clients using Dynamics NAV and Microsoft 365 Business Central"
+  },
+  "ams_li3": {
+    it: "Coordinamento giornaliero ed a medio/lungo termine del team Helpdesk",
+    en: "Daily and medium/long-term coordination of the Helpdesk team"
+  },
+  "ams_li4": {
+    it: "Coordinamento passaggio da fase progettuale a fase di assistenza per tutti i clienti",
+    en: "Coordination of the transition from project phase to support phase for all clients"
+  },
+  "ams_li5": {
+    it: "Gestione delle contestazioni clientelari (fatturazione, metodologia, qualità)",
+    en: "Management of client disputes (billing, methodology, quality)"
+  },
+  "ams_li6": {
+    it: "Elaborazione analisi e prospetti BI per controllo prestazioni risorse e qualità del servizio",
+    en: "Preparation of BI analyses and reports for resource performance and service quality control"
+  },
+  "ams_li7": {
+    it: "Controllo rendiconti di fatturato e definizione/controllo contingency (rispetto tempistiche/stime)",
+    en: "Control of revenue reports and definition/control of contingency (compliance with timing/estimates)"
+  },
+  "ams_li8": {
+    it: "Collaborazione con direzione tecnica, direzione business unit, risorse umane e reparto commerciale per il buon funzionamento del servizio di assistenza",
+    en: "Collaboration with technical management, business unit management, HR, and sales department for the proper functioning of the support service"
+  },
+  "teamlead_desc": {
+    it: "Team Leader per gruppi di lavoro mirati a realizzare soluzioni ERP basate sull'applicativo Microsoft Dynamics 365 Business Central e sulla sua precedente implementazione, Dynamics NAV. Percorso iniziato originariamente in Ahead Informatica, società entrata a far parte del gruppo Horsa a Febbraio del 2019.",
+    en: "Team Leader for workgroups focused on creating ERP solutions based on Microsoft Dynamics 365 Business Central and its previous implementation, Dynamics NAV. This path originally began in Ahead Informatica, a company that became part of the Horsa group in February 2019."
+  },
+  "teamlead_detail_title": {
+    it: "Nel dettaglio:",
+    en: "In detail:"
+  },
+  "teamlead_li1": {
+    it: "Project management IT, analisi e software development per cliente multinazionale nel settore della vendita al dettaglio di oreficeria. Coperte funzionalmente le aree e-commerce, gestione del punto vendita, contabilità, controllo di gestione, planning, warehouse management, distribuzione.",
+    en: "IT project management, analysis and software development for a multinational client in the jewelry retail sector. Covered areas: e-commerce, point of sale management, accounting, management control, planning, warehouse management, distribution."
+  },
+  "teamlead_li2": {
+    it: "Analisi e software development per ottimizzazione flussi logistici in importanti realtà distributive, per settore retail e farmaceutico. Sviluppate integrazioni con terminali di lettura barcodes, ottimizzazione di stoccaggio, prelievo e rifornimento, gestione dei corrieri di spedizione e contabilità di magazzino. Anche in questo caso le realtà cliente in cui si è operato sono di medio/grandi dimensioni ed internazionali.",
+    en: "Analysis and software development for optimizing logistics flows in major distribution companies, for retail and pharmaceutical sectors. Developed integrations with barcode readers, optimized storage, picking and replenishment, shipping carrier management, and warehouse accounting. Clients were medium/large and international."
+  },
+  "teamlead_li3": {
+    it: "Analisi e software development per interscambio dati fra diversi sistemi: warehouse management systems, stampanti fiscali, registratori di cassa, logistiche di magazzino esterne al gestionale. Gestite casistiche ad alto livello di concorrenzialità, con dimensioni importanti sia dal punto di vista dell'utenza che dalla numerosità di dispositivi connessi.",
+    en: "Analysis and software development for data exchange between different systems: warehouse management systems, fiscal printers, cash registers, external warehouse logistics. Managed highly competitive cases, with significant user base and number of connected devices."
+  },
+  "teamlead_li4": {
+    it: "Adeguamento fatturazione elettronica, con focus su integrazione ed efficienza sia dal punto di vista delle comunicazioni fiscali, sia per ottimizzazione in contabilità.",
+    en: "Electronic invoicing adaptation, focusing on integration and efficiency for both fiscal communications and accounting optimization."
+  },
+  "teamlead_skills_title": {
+    it: "Competenze tecniche specifiche acquisite:",
+    en: "Specific technical skills acquired:"
+  },
+  "teamlead_skill1": {
+    it: "IT team leading: formazione, stima, pianificazione, gestione delle risorse, redazione documentale di analisi e rendicontazione ad alto livello di precisione",
+    en: "IT team leading: training, estimation, planning, resource management, high-precision analysis and reporting documentation."
+  },
+  "teamlead_skill2": {
+    it: "Utilizzo completo di Redmine come piattaforma di help desk, gestione progetti, avanzamento lavori, consuntivazione, gestione risorse. Utilizzo di metodologie Agile e Kanban.",
+    en: "Full use of Redmine as a help desk platform, project management, work progress, reporting, resource management. Use of Agile and Kanban methodologies."
+  },
+  "teamlead_skill3": {
+    it: "Sviluppo software di estensioni in AL, linguaggio di programmazione standard Microsoft per Dynamics 365.",
+    en: "Software development of extensions in AL, the standard Microsoft language for Dynamics 365."
+  },
+  "teamlead_skill4": {
+    it: "Utilizzo di Visual Studio Code, AL Development, powershell per deploy, installazione di server SQL ed utilizzo di SQL Server management Studio. Sia per amministrazione base dati sia per stesura di queries di manutenzione ed implementazione.",
+    en: "Use of Visual Studio Code, AL Development, PowerShell for deployment, SQL Server installation and use of SQL Server Management Studio. For both database administration and writing maintenance/implementation queries."
+  },
+  "teamlead_skill5": {
+    it: "Sviluppo di add-on specifici per le soluzioni NAV e BC, principalmente in linguaggi standard .Net (C#, vb.NET)",
+    en: "Development of specific add-ons for NAV and BC solutions, mainly in standard .Net languages (C#, vb.NET)."
+  },
+  "teamlead_skill6": {
+    it: "Considerevole esperienza nell'interscambio dati via XML e json, via web services REST o protocolli FTP/HTTP Post",
+    en: "Significant experience in data exchange via XML and JSON, via REST web services or FTP/HTTP Post protocols."
+  },
+  "teamlead_skill7": {
+    it: "Telnet per integrazione con terminali di lettura barcodes/QR codes, IIS per la pubblicazione di servizi web, ODBC per scambio dati con differenti soluzioni software (es. import dati da AS400)",
+    en: "Telnet for integration with barcode/QR code readers, IIS for web service publishing, ODBC for data exchange with different software solutions (e.g., data import from AS400)."
+  },
+  "teamlead_skill8": {
+    it: "Integrazione con le principali piattaforme di e-commerce, gestione logistica e fatturazione (es. GSPED, Magento, Arxivar)",
+    en: "Integration with major e-commerce platforms, logistics and invoicing management (e.g., GSPED, Magento, Arxivar)."
+  },
+  "teamlead_skill9": {
+    it: "Ottimizzazione prestazionale per le soluzioni Dynamics 365, mediante profiling e tuning con SQL Server Management Studio",
+    en: "Performance optimization for Dynamics 365 solutions, through profiling and tuning with SQL Server Management Studio."
+  },
+  "analista_desc": {
+    it: "Analisi e sviluppo software per soluzioni basate su architetture proprietarie Sistemi, principalmente sul gestionale vitivinicolo Enologia e sul software Profis/Bilanci.",
+    en: "Analysis and software development for solutions based on proprietary Sistemi architectures, mainly for the Enologia wine management software and Profis/Bilanci."
+  },
+  "analista_projects_title": {
+    it: "Principali progetti portati a termine:",
+    en: "Main projects completed:"
+  },
+  "analista_li1": {
+    it: "Sviluppo per modulo di gestione cantina per il settore vitivinicolo, in particolare implementazioni per la tracciabilità dei prodotti enologici, quaderno di campagna, rendicontazione delle operazioni di lavorazione delle masse viticole.",
+    en: "Development for the winery management module for the wine sector, particularly implementations for traceability of wine products, campaign logbook, reporting of wine mass processing operations."
+  },
+  "analista_li2": {
+    it: "Comunicazione telematica con MIPAAF, sviluppo di web client per interscambio XML degli adempimenti fiscali atti alla produzione vinicola ed operazioni di cantina.",
+    en: "Telematic communication with MIPAAF, development of a web client for XML exchange of fiscal requirements for wine production and winery operations."
+  },
+  "analista_li3": {
+    it: "Comunicazione telematica con Agenzia delle Dogane, sviluppo del modulo Telematico Accise per la comunicazione delle movimentazione di prodotti alcolici.",
+    en: "Telematic communication with the Customs Agency, development of the Telematico Accise module for communication of alcoholic product movements."
+  },
+  "analista_li4": {
+    it: "Arricchimento del modulo Bilanci di Profis, adeguamenti normativi ed implementazioni su bilancio XBRL, bilancio consolidato, comunicazioni telematiche con camera di commercio.",
+    en: "Enhancement of the Profis Balance module, regulatory adjustments and implementations on XBRL balance, consolidated balance, telematic communications with the chamber of commerce."
+  },
+  "analista_skills_title": {
+    it: "Competenze tecniche specifiche acquisite:",
+    en: "Specific technical skills acquired:"
+  },
+  "analista_skill1": {
+    it: "Analisi tecnica per soluzioni software strutturate, funzionali con particolare cura della user interface",
+    en: "Technical analysis for structured software solutions, functional with particular attention to the user interface."
+  },
+  "analista_skill2": {
+    it: "Coordinamento di piccoli progetti di sviluppo",
+    en: "Coordination of small development projects."
+  },
+  "analista_skill3": {
+    it: "Attività di packaging e distribuzione del software, interazione con clienti e partners Sistemi",
+    en: "Software packaging and distribution activities, interaction with clients and Sistemi partners."
+  },
+  "analista_skill4": {
+    it: "Sviluppo delle soluzioni Sistemi con linguaggio proprietario “BC”. ",
+    en: "Development of Sistemi solutions with proprietary 'BC' language."
+  },
+  "analista_skill5": {
+    it: "Sviluppati add-on esterni con diversi linguaggi di programmazione: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON",
+    en: "Developed external add-ons with various programming languages: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON."
+  },
+  // Soft skills
+  "soft_skills": {
+    it: "Soft skills",
+    en: "Soft skills"
+  },
+  "soft_desc1": {
+    it: "Vista l'entità dei progetti portati a termine, ho sviluppato discrete capacità relazionali, sia per quanto concerne la gestione del gruppo di lavoro, sia per quanto riguarda il rapporto con il cliente.",
+    en: "Given the scale of the projects completed, I have developed strong interpersonal skills, both in team management and in client relations."
+  },
+  "soft_desc2": {
+    it: "Spesso ho risolto con successo criticità in entrambi i contesti, riuscendo a mantenere il gruppo di lavoro coeso e proattivo (sia risorsa che da coordinatore), collaborando e fornendo la giusta direzione al fine del completamento dell'obiettivo nei tempi e nei modi stabiliti",
+    en: "Successfully addressed and resolved critical issues in both functional and technical contexts, ensuring the team remained cohesive and proactive."
+  },
+  "soft_desc3": {
+    it: "Ho spesso svolto la funzione di relatore per l'esposizione di soluzioni tecniche ed applicative al cliente, tenuto corsi di formazione per le mie risorse, presenziato e fornito il mio contributo tecnico ad importanti tavoli organizzativi anche in contesto internazionale, in lingua inglese e su sedi estere.",
+    en: "I have often acted as a speaker for presenting technical and application solutions to clients, conducted training courses for my team, and provided my technical contribution at important organizational meetings, including internationally, in English and at foreign locations."
+  },
+  "soft_desc4": {
+    it: "In particolare, con l'esperienza nel campo retail, da anni continuo settimanalmente a collaborare con partner aziendali e clienti in vari paesi, sia in presenza che da remoto, mantenendo sempre al massimo delle mie possibilità il clima di lavoro collaborativo e sereno, affrontando con decisione le difficoltà quando necessario",
+    en: "In particular, with my experience in the retail field, I have been collaborating weekly for years with business partners and clients in various countries, both in person and remotely, always maintaining the most collaborative and positive work environment possible, and facing challenges decisively when necessary."
+  },
+  // Footer
+  "social": {
+    it: "Social media",
+    en: "Social media"
+  },
+  "oct_2021": {
+    it: "Ottobre 2021",
+    en: "October 2021"
+  },
+  "may_2018": {
+    it: "Maggio 2018",
+    en: "May 2018"
+  },
+  "nov_2011": {
+    it: "Novembre 2011",
+    en: "November 2011"
+  },
+  "current_date": {
+    it: "Data attuale",
+    en: "Present"
+  },
+  "2023_actual": {
+    it: "2023 - Attuale",
+    en: "2023 - Present"
+  },
+  "2024_actual": {
+    it: "2024 - Attuale",
+    en: "2024 - Present"
+  }
+  // ...add more keys as needed for all significant text...
+};
+
+let currentLang = 'it';
+
+function setLanguage(lang) {
+  for (const [key, value] of Object.entries(translations)) {
+    const els = document.querySelectorAll(`[data-translation-key="${key}"]`);
+    els.forEach(el => {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = value[lang];
+      } else {
+        el.innerHTML = value[lang];
+      }
+    });
+  }
+  // Update flag: show the flag of the language you will switch to
+  const flag = document.getElementById('lang-flag');
+  if (lang === 'it') {
+    flag.src = 'https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/gb.svg';
+    flag.alt = 'English';
+  } else {
+    flag.src = 'https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/it.svg';
+    flag.alt = 'Italiano';
+  }
+  currentLang = lang;
+}
+
+function toggleLanguage() {
+  setLanguage(currentLang === 'it' ? 'en' : 'it');
+}
+
+document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+window.addEventListener('DOMContentLoaded', () => setLanguage('it'));
+
+// PDF Export logic
+function exportToPDF() {
+  // Hide the export and language buttons for PDF
+  document.getElementById('pdf-export').style.display = 'none';
+  document.getElementById('language-toggle').style.display = 'none';
+  html2pdf()
+    .set({
+      margin: 0.5,
+      filename: 'CV_Luca_Martinengo.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: 'in', format: 'A2', orientation: 'portrait' }
+    })
+    .from(document.body)
+    .save()
+    .then(() => {
+      document.getElementById('pdf-export').style.display = '';
+      document.getElementById('language-toggle').style.display = '';
+    });
+}
+document.getElementById('pdf-export').addEventListener('click', exportToPDF);
+</script>
 </body>
 
 </html>
