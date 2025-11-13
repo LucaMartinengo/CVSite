@@ -41,6 +41,15 @@
     </style>
 </head>
 <style>
+    :root {
+      --bg-light: #f6f9fb;
+      --bg-dark: #1a1a1a;
+      --card-light: #ffffff;
+      --card-dark: #2d2d2d;
+      --text-light: #111827;
+      --text-dark: #e5e7eb;
+    }
+
     html,
     body,
     h1,
@@ -55,6 +64,108 @@
     h2 {
         -webkit-text-stroke: 0.25px black
     }
+
+    /* Dark mode styles - using !important to override w3.css */
+    body.dark-mode {
+      background: #1a1a1a !important;
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode * {
+      color: inherit;
+    }
+
+    body.dark-mode .w3-light-grey {
+      background-color: #3a3a3a !important;
+    }
+
+    body.dark-mode .w3-light-grey .w3-container {
+      background-color: #0f766e !important;
+    }
+
+    body.dark-mode .w3-card,
+    body.dark-mode .w3-card-2,
+    body.dark-mode .w3-card-4 {
+      background-color: #2d2d2d !important;
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode .w3-white {
+      background-color: #2d2d2d !important;
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode .w3-text-grey {
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode .w3-teal {
+      background-color: #0f766e !important;
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .w3-display-container {
+      background-color: #2d2d2d !important;
+    }
+
+    body.dark-mode .w3-container {
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode span,
+    body.dark-mode div,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6 {
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5 {
+      -webkit-text-stroke: 0.25px white;
+    }
+
+    body.dark-mode .w3-tag {
+      background-color: #0f766e !important;
+      color: white !important;
+    }
+
+    body.dark-mode a {
+      color: #06b6d4 !important;
+    }
+
+    body.dark-mode footer {
+      background-color: #0f766e !important;
+      color: #e5e7eb !important;
+    }
+
+    body.dark-mode hr {
+      border-color: #3a3a3a !important;
+    }
+
+    body.dark-mode .w3-row-padding > div {
+      color: #e5e7eb !important;
+    }
+
+    #dark-mode-toggle {
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode #dark-mode-toggle,
+    body.dark-mode #language-toggle,
+    body.dark-mode #pdf-export {
+      background: #3a3a3a !important;
+      border-color: #555 !important;
+      color: #e5e7eb;
+    }
+</style>
 </style>
 
 
@@ -64,6 +175,9 @@
     </button>
     <button id="pdf-export" title="Export as PDF" style="position:fixed;top:76px;right:22px;z-index:9999;background:#fff;border:1px solid #e5e7eb;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);cursor:pointer;transition:box-shadow 0.2s;">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" style="width:28px;height:28px;border-radius:50%;" />
+    </button>
+    <button id="dark-mode-toggle" title="Toggle dark mode" style="position:fixed;top:130px;right:22px;z-index:9999;background:#fff;border:1px solid #e5e7eb;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);cursor:pointer;transition:box-shadow 0.2s;">
+      <i class="fa fa-moon-o" style="font-size:20px;color:#0f766e;"></i>
     </button>
     <!-- Page Container -->
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -487,7 +601,7 @@
 const translations = {
   // Sidebar
   "job_title": {
-    it: "AMS Manager, Team leader & Software Developer",
+    it: "AMS Manager, Team Leader & Software Developer",
     en: "AMS Manager, Team Leader & Software Developer"
   },
   "location": {
@@ -656,21 +770,20 @@ const translations = {
     en: "Job Profile"
   },
   "about_summary": {
-    it: `Professionista IT con esperienza decennale in analisi tecnica, sviluppo software, team leading e management, in particolare su progetti e prodotti legati Microsoft Dynamics 365 Business Central.<br>
-Esperto nello sviluppo in AL e C#, integrazioni via web services e gestione di team e processi di supporto tecnico (Redmine, GIT).<br> 
-Orientato al risultato, con comprovata capacità di migliorare le prestazioni operative, assicurare continuità di servizio e mantenere relazioni efficaci con clienti internazionali.<br>
-Aperto a valutare nuove opportunità che valorizzino competenze tecniche e capacità di coordinamento.`,    
-    en: `IT professional with over ten years experience in technical analysis, software development team leading and management for ERP solutions, specialized in Microsoft Dynamics 365 Business Central. <br>
-Skilled in AL and C# development, integrations via REST/XML, and leading support teams using Redmine and Git. <br> Results-driven, focused on performance improvements, service continuity, and effective collaboration with international clients. <br>
-Open to new opportunities that value technical expertise and coordination skills.`
+    it: `Professionista IT con oltre 10 anni in analisi tecnica, sviluppo software, team leading e AMS Management su progetti Microsoft Dynamics 365 Business Central.<br>
+Esperto nello sviluppo in AL e C#, integrazioni via web services e gestione di team e processi di supporto (Redmine, GIT).<br> 
+Orientato al risultato, con comprovata capacità di migliorare le prestazioni operative, assicurare continuità di servizio e gestire efficacemente i rapporti con clienti internazionali.`,    
+    en: `IT professional with 10+ years of experience in technical analysis, software development, team leading, and AMS Management for Microsoft Dynamics 365 Business Central projects.<br>
+Skilled in AL and C# development, web service integrations, and leading support processes (Redmine, GIT).<br> 
+Results-driven, with proven ability to improve operational performance, ensure service continuity, and effectively manage international client relationships.`
   },
   "about_contribution": {
-    it: "Principalmente, ho contribuito alla realizzazione di soluzioni ERP basate su Microsoft Dynamics 365 Business Central ed alla gestione della base clienti aziendale ad essi correlata.",
-    en: "Mainly, I contributed to the development of ERP solutions based on Microsoft Dynamics 365 Business Central and to the management of the customer base."
+    it: "Principale contributor nello sviluppo di soluzioni ERP basate su Microsoft Dynamics 365 Business Central e nella gestione della relativa base clienti aziendale.",
+    en: "Primary contributor to the development of ERP solutions based on Microsoft Dynamics 365 Business Central and related customer base management."
   },
   "about_interest": {
-    it: "Interessato ad opportunità lavorative che consentano una crescita del profilo professionale, contribuendo con entusiasmo e determinazione al completamento dei progetti.",
-    en: "Interested in job opportunities that allow for professional growth, contributing with enthusiasm and determination to the completion of projects."
+    it: "Interessato ad opportunità di crescita professionale che valorizzino le mie competenze tecniche e la determinazione nel completamento dei progetti.",
+    en: "Seeking professional growth opportunities that value technical expertise and determination in project completion."
   },
   // Job Profile (legacy, if still present)
   "job_profile": {
@@ -683,156 +796,156 @@ Open to new opportunities that value technical expertise and coordination skills
     en: "Job Experience"
   },
   "ams_desc": {
-    it: "Gestione del servizio AMS (post-vendita) per la Business Unit Way del gruppo Horsa.",
-    en: "Management of the AMS service for the Way Business Unit of the Horsa Group."
+    it: "Responsabile del servizio AMS (post-vendita) per la Business Unit Way (Gruppo Horsa).",
+    en: "Responsible for the AMS (After-Sales Service) for the Way Business Unit (Horsa Group)."
   },
   "ams_detail_title": {
-    it: "Nel dettaglio:",
-    en: "In detail:"
+    it: "Responsabilità principali:",
+    en: "Main Responsibilities:"
   },
   "ams_li1": {
-    it: "Coordinamento e pianificazione di attività e risorse",
-    en: "Coordination and planning of activities and resources"
+    it: "Coordinamento e pianificazione delle attività e delle risorse del team.",
+    en: "Coordination and planning of team activities and resources."
   },
   "ams_li2": {
-    it: "Gestione dei processi di assistenza ed attività evolutive per clienti utilizzatori di Dynamics NAV e Microsoft 365 Business Central",
-    en: "Management of support processes and development activities for clients using Dynamics NAV and Microsoft 365 Business Central"
+    it: "Gestione dei processi di assistenza e delle attività evolutive per clienti Dynamics NAV/BC.",
+    en: "Management of support processes and development activities for Dynamics NAV/BC clients."
   },
   "ams_li3": {
-    it: "Coordinamento giornaliero ed a medio/lungo termine del team Helpdesk",
-    en: "Daily and medium/long-term coordination of the Helpdesk team"
+    it: "Coordinamento giornaliero e a medio/lungo termine del team Helpdesk.",
+    en: "Daily and medium/long-term coordination of the Helpdesk team."
   },
   "ams_li4": {
-    it: "Coordinamento passaggio da fase progettuale a fase di assistenza per tutti i clienti",
-    en: "Coordination of the transition from project phase to support phase for all clients"
+    it: "Gestione del passaggio dalla fase progettuale alla fase di assistenza (Go-Live).",
+    en: "Managed transition from project phase to support phase (Go-Live)."
   },
   "ams_li5": {
-    it: "Gestione delle contestazioni clientelari (fatturazione, metodologia, qualità)",
-    en: "Management of client disputes (billing, methodology, quality)"
+    it: "Gestione delle controversie e negoziazione con i clienti (fatturazione, metodologia, qualità).",
+    en: "Managed client disputes and negotiations (billing, methodology, quality)."
   },
   "ams_li6": {
-    it: "Elaborazione analisi e prospetti BI per controllo prestazioni risorse e qualità del servizio",
-    en: "Preparation of BI analyses and reports for resource performance and service quality control"
+    it: "Elaborazione di analisi e prospetti BI per controllo prestazioni, qualità e fatturato del servizio.",
+    en: "Prepared BI analyses and reports for service performance, quality, and revenue control."
   },
   "ams_li7": {
-    it: "Controllo rendiconti di fatturato e definizione/controllo contingency (rispetto tempistiche/stime)",
-    en: "Control of revenue reports and definition/control of contingency (compliance with timing/estimates)"
+    it: "Controllo rendiconti di fatturato, definizione e monitoraggio contingency (rispetto tempistiche/stime).",
+    en: "Controlled revenue reports, defined and monitored contingency (adherence to timing/estimates)."
   },
   "ams_li8": {
-    it: "Collaborazione con direzione tecnica, direzione business unit, risorse umane e reparto commerciale per il buon funzionamento del servizio di assistenza",
-    en: "Collaboration with technical management, business unit management, HR, and sales department for the proper functioning of the support service"
+    it: "Collaborazione con direzione tecnica, direzione business unit, HR e commerciale per l'ottimizzazione del servizio.",
+    en: "Collaborated with technical management, business unit management, HR, and sales for service optimization."
   },
   "teamlead_desc": {
-    it: "Team Leader per gruppi di lavoro mirati a realizzare soluzioni ERP basate sull'applicativo Microsoft Dynamics 365 Business Central e sulla sua precedente implementazione, Dynamics NAV. Percorso iniziato originariamente in Ahead Informatica, società entrata a far parte del gruppo Horsa a Febbraio del 2019.",
-    en: "Team Leader for workgroups focused on creating ERP solutions based on Microsoft Dynamics 365 Business Central and its previous implementation, Dynamics NAV. This path originally began in Ahead Informatica, a company that became part of the Horsa group in February 2019."
+    it: "Team Leader per gruppi di lavoro focalizzati sulla creazione di soluzioni ERP basate su Microsoft Dynamics 365 Business Central e Dynamics NAV (Gruppo Horsa, dal 2019).",
+    en: "Team Leader for workgroups focused on creating ERP solutions based on Microsoft Dynamics 365 Business Central and Dynamics NAV (Horsa Group, since 2019)."
   },
   "teamlead_detail_title": {
-    it: "Nel dettaglio:",
-    en: "In detail:"
+    it: "Progetti e Competenze:",
+    en: "Projects and Expertise:"
   },
   "teamlead_li1": {
-    it: "Project management IT, analisi e software development per cliente multinazionale nel settore della vendita al dettaglio di oreficeria. Coperte funzionalmente le aree e-commerce, gestione del punto vendita, contabilità, controllo di gestione, planning, warehouse management, distribuzione.",
-    en: "IT project management, analysis and software development for a multinational client in the jewelry retail sector. Covered areas: e-commerce, point of sale management, accounting, management control, planning, warehouse management, distribution."
+    it: "Project management IT, analisi e sviluppo software per cliente multinazionale (settore oreficeria). Coperte aree e-commerce, punto vendita, contabilità, planning e logistica.",
+    en: "IT project management, analysis, and software development for a multinational client (jewelry retail). Covered e-commerce, POS, accounting, planning, and logistics areas."
   },
   "teamlead_li2": {
-    it: "Analisi e software development per ottimizzazione flussi logistici in importanti realtà distributive, per settore retail e farmaceutico. Sviluppate integrazioni con terminali di lettura barcodes, ottimizzazione di stoccaggio, prelievo e rifornimento, gestione dei corrieri di spedizione e contabilità di magazzino. Anche in questo caso le realtà cliente in cui si è operato sono di medio/grandi dimensioni ed internazionali.",
-    en: "Analysis and software development for optimizing logistics flows in major distribution companies, for retail and pharmaceutical sectors. Developed integrations with barcode readers, optimized storage, picking and replenishment, shipping carrier management, and warehouse accounting. Clients were medium/large and international."
+    it: "Analisi e sviluppo per ottimizzazione flussi logistici (settore retail e farmaceutico). Implementate integrazioni per terminali barcodes, ottimizzazione stoccaggio, prelievo e spedizione. Clienti medio/grandi e internazionali.",
+    en: "Analysis and development for logistics flow optimization (retail and pharmaceutical). Implemented integrations for barcode terminals, storage, picking, and shipping optimization. Medium/large international clients."
   },
   "teamlead_li3": {
-    it: "Analisi e software development per interscambio dati fra diversi sistemi: warehouse management systems, stampanti fiscali, registratori di cassa, logistiche di magazzino esterne al gestionale. Gestite casistiche ad alto livello di concorrenzialità, con dimensioni importanti sia dal punto di vista dell'utenza che dalla numerosità di dispositivi connessi.",
-    en: "Analysis and software development for data exchange between different systems: warehouse management systems, fiscal printers, cash registers, external warehouse logistics. Managed highly competitive cases, with significant user base and number of connected devices."
+    it: "Analisi e sviluppo per interscambio dati fra sistemi eterogenei (WMS, stampanti fiscali, registratori di cassa). Gestite casistiche ad alta concorrenzialità e grandi volumi di utenza/dispositivi.",
+    en: "Analysis and development for data exchange between heterogeneous systems (WMS, fiscal printers, cash registers). Managed high-concurrency cases with large user/device volumes."
   },
   "teamlead_li4": {
-    it: "Adeguamento fatturazione elettronica, con focus su integrazione ed efficienza sia dal punto di vista delle comunicazioni fiscali, sia per ottimizzazione in contabilità.",
-    en: "Electronic invoicing adaptation, focusing on integration and efficiency for both fiscal communications and accounting optimization."
+    it: "Adeguamento fatturazione elettronica, focus su integrazione ed efficienza comunicazioni fiscali e ottimizzazione contabile.",
+    en: "Electronic invoicing adaptation, focusing on integration and efficiency of fiscal communications and accounting optimization."
   },
   "teamlead_skills_title": {
-    it: "Competenze tecniche specifiche acquisite:",
-    en: "Specific technical skills acquired:"
+    it: "Competenze tecniche specifiche:",
+    en: "Specific Technical Skills:"
   },
   "teamlead_skill1": {
-    it: "IT team leading: formazione, stima, pianificazione, gestione delle risorse, redazione documentale di analisi e rendicontazione ad alto livello di precisione",
-    en: "IT team leading: training, estimation, planning, resource management, high-precision analysis and reporting documentation."
+    it: "IT team leading: formazione, stima, pianificazione, gestione delle risorse e redazione documentale con alto livello di precisione.",
+    en: "IT team leading: training, estimation, planning, resource management, and high-precision documentation."
   },
   "teamlead_skill2": {
-    it: "Utilizzo completo di Redmine come piattaforma di help desk, gestione progetti, avanzamento lavori, consuntivazione, gestione risorse. Utilizzo di metodologie Agile e Kanban.",
-    en: "Full use of Redmine as a help desk platform, project management, work progress, reporting, resource management. Use of Agile and Kanban methodologies."
+    it: "Uso avanzato di Redmine per help desk, project management, consuntivazione e gestione risorse. Esperienza con metodologie Agile e Kanban.",
+    en: "Advanced use of Redmine for help desk, project management, reporting, and resource management. Experience with Agile and Kanban."
   },
   "teamlead_skill3": {
-    it: "Sviluppo software di estensioni in AL, linguaggio di programmazione standard Microsoft per Dynamics 365.",
-    en: "Software development of extensions in AL, the standard Microsoft language for Dynamics 365."
+    it: "Sviluppo di estensioni in AL (linguaggio standard Microsoft per Dynamics 365).",
+    en: "Extension development in AL (standard Microsoft language for Dynamics 365)."
   },
   "teamlead_skill4": {
-    it: "Utilizzo di Visual Studio Code, AL Development, powershell per deploy, installazione di server SQL ed utilizzo di SQL Server management Studio. Sia per amministrazione base dati sia per stesura di queries di manutenzione ed implementazione.",
-    en: "Use of Visual Studio Code, AL Development, PowerShell for deployment, SQL Server installation and use of SQL Server Management Studio. For both database administration and writing maintenance/implementation queries."
+    it: "Utilizzo di Visual Studio Code, AL Development, powershell per deploy, SQL Server Management Studio per amministrazione e tuning.",
+    en: "Use of Visual Studio Code, AL Development, PowerShell for deployment, and SQL Server Management Studio for administration and tuning."
   },
   "teamlead_skill5": {
-    it: "Sviluppo di add-on specifici per le soluzioni NAV e BC, principalmente in linguaggi standard .Net (C#, vb.NET)",
-    en: "Development of specific add-ons for NAV and BC solutions, mainly in standard .Net languages (C#, vb.NET)."
+    it: "Sviluppo di add-on specifici per soluzioni NAV e BC, principalmente in linguaggi standard .Net (C#, vb.NET).",
+    en: "Development of specific add-ons for NAV and BC solutions, primarily in standard .Net languages (C#, vb.NET)."
   },
   "teamlead_skill6": {
-    it: "Considerevole esperienza nell'interscambio dati via XML e json, via web services REST o protocolli FTP/HTTP Post",
-    en: "Significant experience in data exchange via XML and JSON, via REST web services or FTP/HTTP Post protocols."
+    it: "Considerevole esperienza nell'interscambio dati via XML e JSON, tramite web services REST o protocolli FTP/HTTP Post.",
+    en: "Significant experience in data exchange via XML and JSON, using REST web services or FTP/HTTP Post protocols."
   },
   "teamlead_skill7": {
-    it: "Telnet per integrazione con terminali di lettura barcodes/QR codes, IIS per la pubblicazione di servizi web, ODBC per scambio dati con differenti soluzioni software (es. import dati da AS400)",
-    en: "Telnet for integration with barcode/QR code readers, IIS for web service publishing, ODBC for data exchange with different software solutions (e.g., data import from AS400)."
+    it: "Integrazione con terminali di lettura (Telnet), pubblicazione servizi web (IIS), scambio dati con software esterni (ODBC, es. AS400).",
+    en: "Integration with reading terminals (Telnet), web service publishing (IIS), data exchange with external software (ODBC, e.g., AS400)."
   },
   "teamlead_skill8": {
-    it: "Integrazione con le principali piattaforme di e-commerce, gestione logistica e fatturazione (es. GSPED, Magento, Arxivar)",
-    en: "Integration with major e-commerce platforms, logistics and invoicing management (e.g., GSPED, Magento, Arxivar)."
+    it: "Integrazione con piattaforme di e-commerce, gestione logistica e fatturazione (es. GSPED, Magento, Arxivar).",
+    en: "Integration with major e-commerce, logistics, and invoicing platforms (e.g., GSPED, Magento, Arxivar)."
   },
   "teamlead_skill9": {
-    it: "Ottimizzazione prestazionale per le soluzioni Dynamics 365, mediante profiling e tuning con SQL Server Management Studio",
-    en: "Performance optimization for Dynamics 365 solutions, through profiling and tuning with SQL Server Management Studio."
+    it: "Ottimizzazione prestazionale per le soluzioni Dynamics 365, mediante profiling e tuning con SQL Server Management Studio.",
+    en: "Performance optimization for Dynamics 365 solutions, using profiling and tuning with SQL Server Management Studio."
   },
   "analista_desc": {
-    it: "Analisi e sviluppo software per soluzioni basate su architetture proprietarie Sistemi, principalmente sul gestionale vitivinicolo Enologia e sul software Profis/Bilanci.",
-    en: "Analysis and software development for solutions based on proprietary Sistemi architectures, mainly for the Enologia wine management software and Profis/Bilanci."
+    it: "Analisi e sviluppo software su architetture proprietarie Sistemi, in particolare sul gestionale vitivinicolo Enologia e sul software Profis/Bilanci.",
+    en: "Analysis and software development on proprietary Sistemi architectures, specifically for the Enologia wine management software and Profis/Bilanci."
   },
   "analista_projects_title": {
-    it: "Principali progetti portati a termine:",
-    en: "Main projects completed:"
+    it: "Progetti completati:",
+    en: "Completed Projects:"
   },
   "analista_li1": {
-    it: "Sviluppo per modulo di gestione cantina per il settore vitivinicolo, in particolare implementazioni per la tracciabilità dei prodotti enologici, quaderno di campagna, rendicontazione delle operazioni di lavorazione delle masse viticole.",
-    en: "Development for the winery management module for the wine sector, particularly implementations for traceability of wine products, campaign logbook, reporting of wine mass processing operations."
+    it: "Sviluppo modulo di gestione cantina (settore vitivinicolo): tracciabilità prodotti, quaderno di campagna e rendicontazione delle operazioni.",
+    en: "Winery management module development (wine sector): product traceability, campaign logbook, and operations reporting."
   },
   "analista_li2": {
-    it: "Comunicazione telematica con MIPAAF, sviluppo di web client per interscambio XML degli adempimenti fiscali atti alla produzione vinicola ed operazioni di cantina.",
-    en: "Telematic communication with MIPAAF, development of a web client for XML exchange of fiscal requirements for wine production and winery operations."
+    it: "Comunicazione telematica con MIPAAF: sviluppo di web client per interscambio XML degli adempimenti fiscali (produzione vinicola).",
+    en: "Telematic communication with MIPAAF: web client development for XML exchange of fiscal requirements (wine production)."
   },
   "analista_li3": {
-    it: "Comunicazione telematica con Agenzia delle Dogane, sviluppo del modulo Telematico Accise per la comunicazione delle movimentazione di prodotti alcolici.",
-    en: "Telematic communication with the Customs Agency, development of the Telematico Accise module for communication of alcoholic product movements."
+    it: "Comunicazione telematica con Agenzia delle Dogane: sviluppo del modulo Telematico Accise (movimentazione di prodotti alcolici).",
+    en: "Telematic communication with the Customs Agency: development of the Telematico Accise module (alcoholic product movements movements)."
   },
   "analista_li4": {
-    it: "Arricchimento del modulo Bilanci di Profis, adeguamenti normativi ed implementazioni su bilancio XBRL, bilancio consolidato, comunicazioni telematiche con camera di commercio.",
-    en: "Enhancement of the Profis Balance module, regulatory adjustments and implementations on XBRL balance, consolidated balance, telematic communications with the chamber of commerce."
+    it: "Arricchimento modulo Bilanci di Profis, adeguamenti normativi e implementazioni su bilancio XBRL e bilancio consolidato.",
+    en: "Enhancement of the Profis Balance module, regulatory adjustments, and implementations on XBRL and consolidated balance sheets."
   },
   "analista_skills_title": {
-    it: "Competenze tecniche specifiche acquisite:",
-    en: "Specific technical skills acquired:"
+    it: "Competenze tecniche specifiche:",
+    en: "Specific Technical Skills:"
   },
   "analista_skill1": {
-    it: "Analisi tecnica per soluzioni software strutturate, funzionali con particolare cura della user interface",
-    en: "Technical analysis for structured software solutions, functional with particular attention to the user interface."
+    it: "Analisi tecnica e funzionale per soluzioni software strutturate, con focus su user interface.",
+    en: "Technical and functional analysis for structured software solutions, with a focus on user interface."
   },
   "analista_skill2": {
-    it: "Coordinamento di piccoli progetti di sviluppo",
-    en: "Coordination of small development projects."
+    it: "Coordinamento di piccoli progetti di sviluppo software.",
+    en: "Coordination of small software development projects."
   },
   "analista_skill3": {
-    it: "Attività di packaging e distribuzione del software, interazione con clienti e partners Sistemi",
-    en: "Software packaging and distribution activities, interaction with clients and Sistemi partners."
+    it: "Packaging e distribuzione del software, interazione con clienti e partners Sistemi.",
+    en: "Software packaging and distribution, interaction with clients and Sistemi partners."
   },
   "analista_skill4": {
-    it: "Sviluppo delle soluzioni Sistemi con linguaggio proprietario “BC”. ",
+    it: "Sviluppo di soluzioni Sistemi con linguaggio proprietario “BC”. ",
     en: "Development of Sistemi solutions with proprietary 'BC' language."
   },
   "analista_skill5": {
-    it: "Sviluppati add-on esterni con diversi linguaggi di programmazione: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON",
-    en: "Developed external add-ons with various programming languages: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON."
+    it: "Sviluppo di add-on esterni con linguaggi diversi: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON.",
+    en: "Developed external add-ons using various languages: VB .NET, XHTML, PHP, Microsoft SQL Server, XML, JSON."
   },
   // Soft skills
   "soft_skills": {
@@ -840,20 +953,20 @@ Open to new opportunities that value technical expertise and coordination skills
     en: "Soft skills"
   },
   "soft_desc1": {
-    it: "Vista l'entità dei progetti portati a termine, ho sviluppato discrete capacità relazionali, sia per quanto concerne la gestione del gruppo di lavoro, sia per quanto riguarda il rapporto con il cliente.",
-    en: "Given the scale of the projects completed, I have developed strong interpersonal skills, both in team management and in client relations."
+    it: "Sviluppo di forti capacità relazionali e comunicative nella gestione del team di lavoro e nel rapporto con i clienti, data l'entità dei progetti.",
+    en: "Developed strong relational and communication skills in team management and client relations, given the scale of projects."
   },
   "soft_desc2": {
-    it: "Spesso ho risolto con successo criticità in entrambi i contesti, riuscendo a mantenere il gruppo di lavoro coeso e proattivo (sia risorsa che da coordinatore), collaborando e fornendo la giusta direzione al fine del completamento dell'obiettivo nei tempi e nei modi stabiliti",
-    en: "Successfully addressed and resolved critical issues in both functional and technical contexts, ensuring the team remained cohesive and proactive."
+    it: "Risoluzione efficace di criticità (tecniche e funzionali), mantenendo il gruppo di lavoro coeso e proattivo (sia come risorsa che come coordinatore).",
+    en: "Effectively resolved critical issues (technical and functional), maintaining a cohesive and proactive team (both as a team member and coordinator)."
   },
   "soft_desc3": {
-    it: "Ho spesso svolto la funzione di relatore per l'esposizione di soluzioni tecniche ed applicative al cliente, tenuto corsi di formazione per le mie risorse, presenziato e fornito il mio contributo tecnico ad importanti tavoli organizzativi anche in contesto internazionale, in lingua inglese e su sedi estere.",
-    en: "I have often acted as a speaker for presenting technical and application solutions to clients, conducted training courses for my team, and provided my technical contribution at important organizational meetings, including internationally, in English and at foreign locations."
+    it: "Esperienza come relatore per l'esposizione di soluzioni tecniche, formatore del team e contributore tecnico in contesti organizzativi internazionali (in inglese e su sedi estere).",
+    en: "Experience as a speaker for technical solutions, team trainer, and technical contributor in international organizational settings (in English and at foreign branches)."
   },
   "soft_desc4": {
-    it: "In particolare, con l'esperienza nel campo retail, da anni continuo settimanalmente a collaborare con partner aziendali e clienti in vari paesi, sia in presenza che da remoto, mantenendo sempre al massimo delle mie possibilità il clima di lavoro collaborativo e sereno, affrontando con decisione le difficoltà quando necessario",
-    en: "In particular, with my experience in the retail field, I have been collaborating weekly for years with business partners and clients in various countries, both in person and remotely, always maintaining the most collaborative and positive work environment possible, and facing challenges decisively when necessary."
+    it: "Collaborazione settimanale con partner e clienti internazionali (settore retail), mantenendo un clima di lavoro sereno e proattivo anche da remoto, affrontando le difficoltà in modo deciso.",
+    en: "Weekly collaboration with international partners and clients (retail sector), maintaining a calm and proactive work environment even remotely, and facing challenges decisively."
   },
   // Footer
   "social": {
@@ -919,11 +1032,39 @@ function toggleLanguage() {
 document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
 window.addEventListener('DOMContentLoaded', () => setLanguage('it'));
 
+// Dark mode toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode);
+  const icon = document.querySelector('#dark-mode-toggle i');
+  icon.className = isDarkMode ? 'fa fa-sun-o' : 'fa fa-moon-o';
+}
+
+// Initialize dark mode from localStorage
+const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+if (darkModeEnabled) {
+  document.body.classList.add('dark-mode');
+  if (document.querySelector('#dark-mode-toggle i')) {
+    document.querySelector('#dark-mode-toggle i').className = 'fa fa-sun-o';
+  }
+}
+
+document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+
 // PDF Export logic
 function exportToPDF() {
-  // Hide the export and language buttons for PDF
+  // Hide the export and control buttons for PDF
   document.getElementById('pdf-export').style.display = 'none';
   document.getElementById('language-toggle').style.display = 'none';
+  document.getElementById('dark-mode-toggle').style.display = 'none';
+  
+  // Temporarily remove dark mode to ensure PDF has proper colors
+  const wasDarkMode = document.body.classList.contains('dark-mode');
+  if (wasDarkMode) {
+    document.body.classList.remove('dark-mode');
+  }
+  
   html2pdf()
     .set({
       margin: 0.5,
@@ -935,8 +1076,23 @@ function exportToPDF() {
     .from(document.body)
     .save()
     .then(() => {
+      // Restore everything
       document.getElementById('pdf-export').style.display = '';
       document.getElementById('language-toggle').style.display = '';
+      document.getElementById('dark-mode-toggle').style.display = '';
+      if (wasDarkMode) {
+        document.body.classList.add('dark-mode');
+      }
+    })
+    .catch((error) => {
+      // Restore on error
+      document.getElementById('pdf-export').style.display = '';
+      document.getElementById('language-toggle').style.display = '';
+      document.getElementById('dark-mode-toggle').style.display = '';
+      if (wasDarkMode) {
+        document.body.classList.add('dark-mode');
+      }
+      console.error('PDF export failed:', error);
     });
 }
 document.getElementById('pdf-export').addEventListener('click', exportToPDF);
